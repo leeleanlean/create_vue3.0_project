@@ -1,5 +1,18 @@
 # create_vue3.0_project
 
+## ant-design-vue
+安装组件
+```
+yarn add ant-design-vue@next --save
+```
+全局引入组件
+```
+import Antd from 'ant-design-vue'
+import 'ant-design-vue/dist/antd.css'
+
+app.use(Antd)
+```
+
 ## Project setup
 ```
 yarn install
