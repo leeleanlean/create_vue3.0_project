@@ -1,0 +1,105 @@
+.layout {
+  .left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 240px;
+    background-color: #052a5f;
+    h1 {
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      height: 60px;
+      line-height: 60px;
+      padding-left: 10px;
+      color: #fff;
+      font-weight: 600;
+      background-color: #c11902;
+      img {
+        width: 40px;
+        margin-right: 5px;
+        margin-top: -2px;
+      }
+    }
+    // aside-menu
+    .aside-menu {
+      color: #fff;
+      ul {
+        li {
+          a {
+            color: #fff;
+            display: flex;
+            align-items: center;
+            padding-left: 15px;
+            height: 52px;
+            line-height: 52px;
+            cursor: pointer;
+            i {
+              margin-right: 8px;
+              font-size: 20px;
+            }
+          }
+          &:hover a, &.active a {
+            background-color: #1b3d6d;
+          }
+        }
+      }
+    }
+  }
+  .right {
+    position: absolute;
+    left: 240px;
+    right: 0;
+    // menu
+    .menu {
+      position: fixed;
+      left: 240px;
+      right: 0;
+      z-index: 999;
+      display: flex;
+      justify-content: space-between;
+      height: 60px;
+      line-height: 60px;
+      padding: 0 20px;
+      color: #fff;
+      background-color: #052a5f;
+      .menu-left {
+        ul {
+          display: flex;
+          align-items: center;
+          li {
+            a {
+              font-size: 15px;
+              font-weight: 500;
+              display: block;
+              cursor: pointer;
+              padding: 0 21px;
+              display: block;
+              width: 100%;
+              height: 100%;
+              color: #fff;
+            }
+            &.active a, &:hover a {
+              color: #052a5f;
+              background-color: #fff;
+            }
+          }
+        }
+      }
+      .menu-right {
+        a {
+          font-weight: 500;
+          color: #fff;
+        }
+      }
+    }
+    // container
+    .container {
+      margin: 80px 20px 20px 20px;
+      min-height: calc(100vh - 102px);
+      padding: 20px;
+      background-color: #fff;
+    }
+  }
+}
