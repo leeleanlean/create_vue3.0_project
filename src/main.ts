@@ -11,6 +11,11 @@ import Antd from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css'
 
 /**
+ * Base styles
+ */
+import './assets/styles/index.scss'
+
+/**
  * Create app
  */
 createApp(App)
