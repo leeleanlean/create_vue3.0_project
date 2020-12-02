@@ -1,5 +1,7 @@
 # create_vue3.0_project
 
+## 分支说明
+
 ## ant-design-vue
 安装组件
 ```
@@ -41,26 +43,3 @@ VUE_APP_BASE_URL = '/production'
 {{ process.env.VUE_APP_BASE_URL }}
 ```
 ## 基础UI框架搭建
-
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
