@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import authority from './authority'
 import dashboard from './dashboard'
+import meterial from './meterial'
 import others from './others'
 
 const routes: Array<RouteRecordRaw> = [
@@ -10,6 +11,7 @@ const routes: Array<RouteRecordRaw> = [
   },
 
   dashboard, // Dashboard
+  meterial, // Meterial
   authority, // 权限管理
   others // 框架路由
 ]

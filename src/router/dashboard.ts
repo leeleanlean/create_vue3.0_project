@@ -1,7 +1,3 @@
-/**
- * Dashboard
- */
-
 // 异步加载组件
 const _import = (file: string) => () => import('@/views/' + file)
 const _importLayout = () => () => import('@/components/Layout/index.vue')

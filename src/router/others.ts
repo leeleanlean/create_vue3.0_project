@@ -1,7 +1,3 @@
-/**
- * 权限管理
- */
-
 // 异步加载组件
 const _import = (file: string) => () => import('@/views/' + file)
 
