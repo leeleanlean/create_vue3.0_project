@@ -41,16 +41,17 @@
           </ul>
         </div>
         <div class="menu-right">
-          <a-dropdown>
-            <a class="ant-dropdown-link" @click="e => e.preventDefault()">Admin</a>
-            <template #overlay>
-              <a-menu>
-                <a-menu-item v-for="item in ['用户信息', '退出登录', '修改密码']" :key="item">
-                  <a href="javascript:;">{{ item }}</a>
-                </a-menu-item>
-              </a-menu>
+          <el-dropdown size="medium">
+            <span class="el-dropdown-link">
+              Admin<i class="el-icon-arrow-down el-icon--right"></i>
+            </span>
+            <template #dropdown>
+              <el-dropdown-menu>
+                <el-dropdown-item>退出</el-dropdown-item>
+                <el-dropdown-item>修改信息</el-dropdown-item>
+              </el-dropdown-menu>
             </template>
-          </a-dropdown>
+          </el-dropdown>
         </div>
       </div>
       <!-- container -->

@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d21dbb8"],{d30c:function(e,n,c){"use strict";c.r(n);var o=c("7a23"),t={class:"role"};function r(e,n,c,r,u,a){return Object(o["openBlock"])(),Object(o["createBlock"])("section",t," role ")}var u={name:"AuthorityRole",components:{},setup:function(){var e=Object(o["ref"])(0);return{counter:e}}};u.render=r;n["default"]=u}}]);
-//# sourceMappingURL=chunk-2d21dbb8.94a179be.js.map

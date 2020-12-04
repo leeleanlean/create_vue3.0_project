@@ -5,10 +5,10 @@ import router from './router'
 import store from './store'
 
 /**
- * Antd
+ * Element plus
  */
-import Antd from 'ant-design-vue'
-import 'ant-design-vue/dist/antd.css'
+import ElementPlus from 'element-plus'
+import 'element-plus/lib/theme-chalk/index.css'
 
 /**
  * Base styles
@@ -21,5 +21,5 @@ import './assets/styles/index.scss'
 createApp(App)
   .use(store)
   .use(router)
-  .use(Antd)
+  .use(ElementPlus)
   .mount('#app')

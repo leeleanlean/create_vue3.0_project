@@ -6,20 +6,11 @@ export default {
   path: '/Material',
   name: 'Material',
   component: _importLayout(),
-  redirect: '/Material/Table',
+  redirect: '/Material/Form',
   meta: {
     title: 'Material'
   },
   children: [
-    {
-      path: 'Table',
-      name: 'MaterialTable',
-      meta: {
-        keepAlive: true,
-        title: 'Table'
-      },
-      component: _import('Material/Table')
-    },
     {
       path: 'Form',
       name: 'MaterialForm',
@@ -28,6 +19,15 @@ export default {
         title: 'Form'
       },
       component: _import('Material/Form')
+    },
+    {
+      path: 'Table',
+      name: 'MaterialTable',
+      meta: {
+        keepAlive: true,
+        title: 'Table'
+      },
+      component: _import('Material/Table')
     }
   ]
 }

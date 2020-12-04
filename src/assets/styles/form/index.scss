@@ -1,0 +1,25 @@
+.el-date-editor.el-input,
+.el-date-editor.el-input__inner,
+.el-select,
+.el-cascader {
+  width: 100%;
+}
+
+.el-checkbox-group {
+  height: 42px;
+}
+.el-checkbox-group.el-transfer-panel__list {
+  height: 100%;
+}
+.el-form-item__content {
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+}
+.el-slider {
+  flex: 1;
+}
+.el-popper.is-light,
+.el-popper.is-light .el-popper__arrow::before {
+  border: 1px solid #e4e4e4;
+}
