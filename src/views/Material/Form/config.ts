@@ -41,11 +41,11 @@ export default {
       config: {
         maxlength: 10,
         showWordLimit: true,
-        blur: (v: string) => console.log('blur', v),
-        focus: (v: string) => console.log('focus', v),
+        blur: (v: Event) => console.log('blur', v),
+        focus: (v: Event) => console.log('focus', v),
         change: (v: string) => console.log('change', v),
         input: (v: string) => console.log('input', v),
-        clear: (v: string) => console.log('clear', v)
+        clear: () => console.log('clear')
       }
     },
     {
@@ -86,8 +86,8 @@ export default {
       config: {
         step: 2,
         change: (v: string) => console.log('change', v),
-        blur: (v: string) => console.log('blur', v),
-        focus: (v: string) => console.log('focus', v)
+        blur: (v: Event) => console.log('blur', v),
+        focus: (v: Event) => console.log('focus', v)
       }
     },
     {
@@ -153,9 +153,7 @@ export default {
       label: '时间选择器',
       prop: 'TimePicker',
       config: {
-        change: (v: string) => console.log('change', v),
-        blur: (v: string) => console.log('blur', v),
-        focus: (v: string) => console.log('focus', v)
+        change: (v: string) => console.log('change', v)
       }
     },
     {
@@ -169,9 +167,7 @@ export default {
           step: '00:15',
           end: '18:30'
         },
-        change: (v: string) => console.log('change', v),
-        blur: (v: string) => console.log('blur', v),
-        focus: (v: string) => console.log('focus', v)
+        change: (v: string) => console.log('change', v)
       }
     },
     {
@@ -180,9 +176,7 @@ export default {
       label: '日期选择器',
       prop: 'DatePicker',
       config: {
-        change: (v: string) => console.log('change', v),
-        blur: (v: string) => console.log('blur', v),
-        focus: (v: string) => console.log('focus', v)
+        change: (v: string) => console.log('change', v)
       }
     },
     {
@@ -193,9 +187,7 @@ export default {
       config: {
         type: 'datetime',
         format: 'YYYY-MM-DD hh:mm:ss',
-        change: (v: string) => console.log('change', v),
-        blur: (v: string) => console.log('blur', v),
-        focus: (v: string) => console.log('focus', v)
+        change: (v: string) => console.log('change', v)
       }
     },
     {
@@ -239,7 +231,7 @@ export default {
           { label: '备选项b', key: 2 },
           { label: '备选项c', key: 3 }
         ],
-        change: (v: string) => console.log('change', v)
+        change: (v: string[], position: string, k: string[]) => console.log('change', v, position, k)
       }
     }
   ]
