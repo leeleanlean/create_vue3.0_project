@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d21028e"],{b769:function(e,a,n){"use strict";n.r(a);var t=n("7a23"),r={class:"meterial-table"};function c(e,a,n,c,i,b){return Object(t["E"])(),Object(t["j"])("section",r," MeterialTable ")}var i={name:"MeterialTable"};i.render=c;a["default"]=i}}]);
+//# sourceMappingURL=chunk-2d21028e.d96f8914.js.map

@@ -88,9 +88,15 @@
         }
       }
       .menu-right {
-        a {
+        .el-dropdown {
           font-weight: 500;
           color: #fff;
+          &:hover {
+            cursor: pointer;
+          }
+          i {
+            font-size: 12px;
+          }
         }
       }
     }
@@ -100,6 +106,18 @@
       min-height: calc(100vh - 102px);
       padding: 20px;
       background-color: #fff;
+      .title {
+        &.el-divider {
+          background-color: #eee;
+        }
+        .el-divider__text.is-left {
+          left: 0;
+        }
+        .el-divider__text {
+          font-size: 17px;
+          padding: 0 19px 0 0;
+        }
+      }
     }
   }
 }

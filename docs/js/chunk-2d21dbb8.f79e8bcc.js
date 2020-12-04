@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d21dbb8"],{d30c:function(e,n,t){"use strict";t.r(n);var c=t("7a23"),o={class:"role"};function r(e,n,t,r,u,s){return Object(c["E"])(),Object(c["j"])("section",o," role ")}var u={name:"AuthorityRole",components:{},setup:function(){var e=Object(c["H"])(0);return{counter:e}}};u.render=r;n["default"]=u}}]);
+//# sourceMappingURL=chunk-2d21dbb8.f79e8bcc.js.map
