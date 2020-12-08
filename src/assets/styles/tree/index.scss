@@ -1,0 +1,103 @@
+.custom-tree {
+  .treeFoldeIcon {
+    width: 14px;
+    margin-right: 6px;
+  }
+  .treeFileIcon {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+  }
+  .is-focusable.is-current > .el-tree-node__content {
+    color: #1D85E7;
+    background-color: #F0F8FF;
+    border-left: 3px solid #1D85E7;
+    font-weight: 500;
+  }
+
+  // 三角
+  .el-tree-node__expand-icon {
+    font-size: 10px;
+    font-weight: 700;
+    padding-bottom: 9px;
+  }
+
+  // 二级
+  &>.el-tree-node>.el-tree-node__children {
+    position: relative;
+    &>.is-focusable.is-current>.el-tree-node__content {
+      background-color: #fff;
+      border-left: none;
+      font-weight: 500;
+      &::after {
+        content: '';
+        position: absolute;
+        left: 11px;
+        width: 3px;
+        height: 34px;
+        background-color: #1D85E7;
+        z-index: 99;
+      }
+    }
+    &>::after {
+      position: absolute;
+      width: 1px;
+      left: 12px;
+      top: 0;
+      bottom: 0;
+      content: '';
+      color: #fff;
+      background-color: #ddd;
+    }
+  }
+  // 三级
+  &>.el-tree-node>.el-tree-node__children>.el-tree-node>.el-tree-node__children {
+    position: relative;
+    &>.is-focusable.is-current>.el-tree-node__content {
+      background-color: #fff;
+      border-left: none;
+      font-weight: 500;
+      &::after {
+        content: '';
+        position: absolute;
+        left: 29px;
+        width: 3px;
+        height: 34px;
+        background-color: #1D85E7;
+        z-index: 99;
+      }
+    }
+    &>::after {
+      position: absolute;
+      width: 1px;
+      left: 30px;
+      top: 0;
+      bottom: 0;
+      content: '';
+      color: #fff;
+      background-color: #d9d9d9;
+    }
+  }
+}
+  
+
+.el-tree-node__content {
+  height: 34px;
+  font-size: 16px;
+}
+.el-tree-list {
+  line-height: 32px;
+  width: 100%;
+  &:hover .iconOperating {
+    display: inline-block;
+  }
+  .labelName {
+    margin-right: 6px;
+  }
+  .iconOperating {
+    display: none;
+  }
+  i:hover {
+    color: #409EFF;
+  }
+}

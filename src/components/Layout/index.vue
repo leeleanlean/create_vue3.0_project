@@ -11,7 +11,7 @@
           <li
             v-for="(item, index) in children"
             :key="index"
-            :class="{active: asideActive.includes(item.path)}"
+            :class="{active: asideActive.endsWith(item.path)}"
             @click="changeAsideActive(item)">
             <router-link :to="{ name: item.name }">
               <i v-if="item.meta.icon" :class="item.meta.icon"></i>
@@ -31,7 +31,7 @@
             <li
               v-for="(item, index) in menu"
               :key="index"
-              :class="{active: active.includes(item.path)}"
+              :class="{active: active.endsWith(item.path)}"
               @click="changeActive(item)">
               <router-link :to="{ name: item.name }">
                 <i v-if="item.meta.icon" :class="item.meta.icon"></i>

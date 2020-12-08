@@ -1,0 +1,11 @@
+.pagination-container {
+	display: flex;
+  justify-content: flex-end;
+}
+.el-pagination__total, .el-pagination__jump {
+  color: #2b2b2b;
+}
+.el-pagination.is-background .btn-next, .el-pagination.is-background .btn-prev, .el-pagination.is-background .el-pager li {
+  background-color: #ddd;
+  color: #2b2b2b;
+}

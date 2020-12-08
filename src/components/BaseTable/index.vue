@@ -1,24 +1,80 @@
 <template>
-  <section class="base-table">
-    <Search />
-    <List />
-  </section>
+  <el-table
+    v-loading="config?.loading"
+    :data="config?.tableData"
+    empty-text="暂无数据"
+    style="width: 100%">
+    <!-- # -->
+    <el-table-column
+      type="index"
+      label="#"
+      width="55"
+      align="center">
+    </el-table-column>
+
+    <!-- header -->
+    <slot name="header" />
+
+    <!-- column -->
+    <el-table-column
+      v-for="(item, key) in config?.tableColumn"
+      :key="key"
+      :prop="item.prop"
+      :fixed="item.fixed"
+      :align="item.align"
+      :label="item.label"
+      :width="item.width ?? ''"
+      :min-width="item.minWidth ?? ''"
+      :show-overflow-tooltip="item.showTooltip"
+      :sortable="item.sortable || false">
+      <template #default="scope">
+        <!-- 文字显示 -->
+        <span v-if="!item.type">
+          {{ scope.row[item.prop] }}
+        </span>
+        <!-- 自定义 -->
+        <template v-if="item.type === 'slot'">
+          <slot :name="item.prop" v-bind:scope="scope" />
+        </template>
+      </template>
+    </el-table-column>
+
+    <!-- footer -->
+    <slot name="footer" />
+  </el-table>
+
+  <el-pagination
+    align="right"
+    class="m-tb20"
+    @size-change="handleSizeChange"
+    @current-change="handleCurrentChange"
+    :small="config.pagination.small"
+    :background="config.pagination.background"
+    :page-size="config.pagination.pageSize"
+    :total="config.pagination.total"
+    :page-count="config.pagination.pageCount"
+    :pager-count="config.pagination.pagerCount"
+    :current-page="config.pagination.currentPage"
+    :layout="config.pagination.layout ?? 'prev, pager, next, sizes, total'"
+    :page-sizes="config.pagination.pageSizes"
+    :popper-class="config.pagination.popperClass"
+    :prev-text="config.pagination.prevText"
+    :next-text="config.pagination.nextText"
+    :disabled="config.pagination.disabled"
+    :hide-on-single-page="config.pagination.hideOnSinglePage">
+  </el-pagination>
 </template>
 <script lang="ts">
-import { ref } from 'vue'
-
-import Search from './components/Search.vue'
-import List from './components/List.vue'
-
 export default {
-  components: {
-    Search,
-    List
+  props: {
+    config: Object
   },
-  setup () {
-    const counter = ref(0)
+  setup (props, { emit }) {
+    const handleCurrentChange = index => {
+      emit('handle-current-change', index)
+    }
     return {
-      counter
+      handleCurrentChange
     }
   }
 }

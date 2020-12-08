@@ -28,6 +28,15 @@ export default {
         title: 'Table'
       },
       component: _import('Material/Table')
+    },
+    {
+      path: 'TableSearch',
+      name: 'MaterialTableSearch',
+      meta: {
+        keepAlive: true,
+        title: 'TableSearch'
+      },
+      component: _import('Material/TableSearch')
     }
   ]
 }

@@ -1,0 +1,73 @@
+//  不带fixed的表格
+.el-table::before {
+  height: 0px;
+}
+.el-table {
+  border: 1px solid #dcdfe6;
+  ::before {
+    height: 0px;
+  }
+  thead {
+    padding: 8px 0;
+    tr {
+      th {
+        background: #f5f5f5;
+        color: #676767;
+        border-right: 1px solid #dcdfe6;
+        display: table-cell!important; 
+        &:last-child {
+          border-right: none;
+        }
+        &.is-leaf {
+          border-bottom: 1px solid #dcdfe6;
+        } 
+      }
+    }
+  }
+  th.is-leaf {
+    td {
+      border-bottom: none;
+    }
+  }
+  tr, td {
+    border-right: 1px solid #dcdfe6;
+    height: 40px;
+    text-align: left;
+    padding: 12px 0;
+  }
+  tr:not(:last-child) {
+    border-bottom: none;
+  }
+  tbody {
+    .order-management-error-style {
+      td:nth-child(1) {
+        background-color: #c11920 !important;
+        color: #fff;
+      }
+    }
+    tr:last-child {
+      td {
+        border-bottom: none !important;
+      }
+    }
+  }
+  td:last-child {
+    border-right: none;
+  }
+}
+.el-table__body tr.hover-row.current-row>td,
+.el-table__body tr.hover-row.el-table__row--striped.current-row>td,
+.el-table__body tr.hover-row.el-table__row--striped>td,
+.el-table__body tr.hover-row>td {
+  background-color: #f5f7fa
+}
+
+/*
+ * 加载中/暂无数据背景
+ */
+.el-table__body-wrapper {
+  background-color: #f5f5f5;
+}
+.el-table__empty-text {
+  color: #2b2b2b;
+}
