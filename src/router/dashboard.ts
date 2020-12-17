@@ -13,13 +13,13 @@ export default {
       path: 'Index',
       name: 'DashboardIndex',
       component: _import('Dashboard/Index'),
-      meta: { title: 'Dashboard' }
+      meta: { title: 'Dashboard', icon: 'el-icon-data-line' }
     },
     {
-      path: 'About',
-      name: 'DashboardAbout',
-      component: _import('Dashboard/About'),
-      meta: { title: 'About' }
+      path: 'Demo',
+      name: 'DashboardDemo',
+      component: _import('Dashboard/Demo'),
+      meta: { title: 'Demo', icon: 'el-icon-wind-power' }
     }
   ]
 }

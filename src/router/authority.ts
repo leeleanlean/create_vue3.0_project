@@ -16,7 +16,8 @@ export default {
       name: 'AuthorityUser',
       meta: {
         keepAlive: true,
-        title: '用户管理'
+        title: '用户管理',
+        icon: 'el-icon-user'
       },
       component: _import('Authority/User')
     },
@@ -25,7 +26,8 @@ export default {
       name: 'AuthorityRole',
       meta: {
         keepAlive: true,
-        title: '角色管理'
+        title: '角色管理',
+        icon: 'el-icon-s-custom'
       },
       component: _import('Authority/Role')
     },
@@ -34,7 +36,8 @@ export default {
       name: 'AuthorityGroup',
       meta: {
         keepAlive: true,
-        title: '用户组管理'
+        title: '用户组管理',
+        icon: 'el-icon-setting'
       },
       component: _import('Authority/Group')
     }

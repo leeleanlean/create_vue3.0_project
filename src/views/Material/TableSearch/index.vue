@@ -1,7 +1,18 @@
 <template>
   <section class="meterial-table">
-    <BaseForm class="m-b20" :config="form" @submit="submit" />
-    <BaseTable :config="table" @handle-current-change="handleCurrentChange" />
+    <BaseForm class="m-b20" :config="form" @submit="data => {
+      // Set search params
+      form.form = data
+      // Init
+      init()
+    }" />
+    <BaseTable :config="table" @handle-current-change="index => {
+      // Set default pagination and tableData
+      table.pagination.pageIndex = index
+      table.tableData = []
+      // Init
+      init()
+    }" />
   </section>
 </template>
 <script lang="ts">
@@ -21,29 +32,17 @@ export default {
     const table = reactive(config.table)
 
     const init = () => {
+      console.log({
+        ...form.form,
+        ...table.pagination
+      })
       table.loading = true
       setTimeout(() => {
-        table.tableData = [{
-          header: 'header',
-          date: '2016-05-02',
-          name: '王小虎',
-          slot: 'slot',
-          address: '上海市普陀区金沙江路 1518 弄',
-          footer: 'footer'
-        }]
-        table.pagination.total = 600
+        table.tableData = []
+        table.pagination.total = Math.ceil(Math.random() * 600)
         table.loading = false
       }, 1500)
     }
-
-    // 表单搜索
-    const submit = forms => {
-      console.log({
-        ...forms,
-        ...table.pagination
-      })
-    }
-
     // 切换分页
     const handleCurrentChange = index => {
       table.pagination.pageIndex = index
@@ -58,7 +57,6 @@ export default {
       form,
       table,
       init,
-      submit,
       handleCurrentChange
     }
   }

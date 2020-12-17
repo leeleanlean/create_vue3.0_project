@@ -6,7 +6,7 @@
 <script lang="ts">
 import { ref } from 'vue'
 export default {
-  name: 'About',
+  name: 'DashboardDemo',
   components: {},
   setup () {
     const counter = ref(0)

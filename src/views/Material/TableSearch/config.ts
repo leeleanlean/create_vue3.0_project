@@ -1,8 +1,8 @@
 export default {
   form: {
-    form: {
-      search: true
-    },
+    search: true,
+
+    form: {},
 
     // 配置布局
     row: {

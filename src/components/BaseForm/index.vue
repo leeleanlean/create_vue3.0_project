@@ -447,7 +447,7 @@
     </el-row>
 
     <!-- footer -->
-    <template v-if="config.form?.search">
+    <template v-if="config.search ?? false">
       <el-row type="flex" justify="end">
         <el-button type="primary" size="medium" @click="submitForm">搜索</el-button>
       </el-row>
