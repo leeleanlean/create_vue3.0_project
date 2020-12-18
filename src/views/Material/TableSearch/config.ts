@@ -1,4 +1,7 @@
 export default {
+  pages: {
+    title: '通用带搜索表格'
+  },
   form: {
     search: true,
 
@@ -22,15 +25,18 @@ export default {
     loading: false,
     tableData: [],
     tableColumn: [
-      { label: '日期', prop: 'date' },
       { label: '名称', prop: 'name' },
-      { label: '地址', minWidth: 200, prop: 'address' },
-      { type: 'slot', label: 'xxx', prop: 'xxx' }
+      { label: '日期', prop: 'date' },
+      { label: '年龄', prop: 'age' },
+      { label: '地址', minWidth: 200, prop: 'address' }
     ],
     pagination: {
       pageIndex: 1,
       pageSize: 10,
       total: 0
+    },
+    config: {
+      index: true
     }
   }
 }

@@ -1,4 +1,5 @@
 <template>
+  <h3 class="title m-b20" v-if="config?.pages?.title">{{ config.pages.title }}</h3>
   <!-- form -->
   <el-form
     ref="refForm"
@@ -472,6 +473,9 @@ export default {
   components: {
     BaseUpload
   },
+  emits: [
+    'submit'
+  ],
   setup (props, { emit }) {
     // 表单组件
     const refForm = ref()

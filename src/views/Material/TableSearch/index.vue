@@ -1,63 +1,39 @@
 <template>
-  <section class="meterial-table">
-    <BaseForm class="m-b20" :config="form" @submit="data => {
-      // Set search params
-      form.form = data
-      // Init
-      init()
-    }" />
-    <BaseTable :config="table" @handle-current-change="index => {
-      // Set default pagination and tableData
-      table.pagination.pageIndex = index
-      table.tableData = []
-      // Init
-      init()
-    }" />
-  </section>
+  <BaseSearch :config="config" @selection-change="selectionChange">
+    <template #handle>
+      <el-button type="primary" size="medium" @click="() => {
+        this.$notify({
+          title: '操作提示',
+          message: '这是一条Primary提示消息',
+          type: 'success'
+        })
+      }">新增数据</el-button>
+      <el-button type="danger" size="medium" @click="() => {
+        this.$notify({
+          title: '操作提示',
+          message: '这是一条Danger提示消息',
+          type: 'error'
+        })
+      }">删除数据</el-button>
+    </template>
+  </BaseSearch>
 </template>
 <script lang="ts">
-import { onMounted, reactive } from 'vue'
-import BaseTable from '@/components/BaseTable/index.vue'
-import BaseForm from '@/components/BaseForm/index.vue'
+import BaseSearch from '@/components/BaseSearch/index.vue'
 import config from './config'
 
 export default {
   name: 'MeterialTableSearch',
   components: {
-    BaseTable,
-    BaseForm
+    BaseSearch
   },
   setup () {
-    const form = reactive(config.form)
-    const table = reactive(config.table)
-
-    const init = () => {
-      console.log({
-        ...form.form,
-        ...table.pagination
-      })
-      table.loading = true
-      setTimeout(() => {
-        table.tableData = []
-        table.pagination.total = Math.ceil(Math.random() * 600)
-        table.loading = false
-      }, 1500)
+    const selectionChange = sections => {
+      console.log(sections)
     }
-    // 切换分页
-    const handleCurrentChange = index => {
-      table.pagination.pageIndex = index
-      table.tableData = []
-
-      init()
-    }
-
-    onMounted(() => init())
-
     return {
-      form,
-      table,
-      init,
-      handleCurrentChange
+      config,
+      selectionChange
     }
   }
 }

@@ -1,11 +1,21 @@
 <template>
+  <h3 class="title m-b20" v-if="config?.pages?.title">{{ config.pages.title }}</h3>
   <el-table
     v-loading="config?.loading"
     :data="config?.tableData"
+    @selection-change="sections => $emit('selection-change', sections)"
     empty-text="暂无数据"
     style="width: 100%">
+    <!-- selection -->
+    <el-table-column
+      v-if="config?.config?.selection"
+      type="selection"
+      width="55">
+    </el-table-column>
+
     <!-- # -->
     <el-table-column
+      v-if="config?.config?.index ?? true"
       type="index"
       label="#"
       width="55"
@@ -46,8 +56,7 @@
   <el-pagination
     align="right"
     class="m-tb20"
-    @size-change="handleSizeChange"
-    @current-change="handleCurrentChange"
+    @current-change="index => $emit('handle-current-change', index)"
     :small="config.pagination.small"
     :background="config.pagination.background"
     :page-size="config.pagination.pageSize"
@@ -69,13 +78,11 @@ export default {
   props: {
     config: Object
   },
-  setup (props, { emit }) {
-    const handleCurrentChange = index => {
-      emit('handle-current-change', index)
-    }
-    return {
-      handleCurrentChange
-    }
-  }
+  emits: [
+    'handle-current-change',
+    'handleCurrentChange',
+    'selection-change',
+    'selectionChange'
+  ]
 }
 </script>

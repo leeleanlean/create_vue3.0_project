@@ -1,4 +1,10 @@
 export default {
+  pages: {
+    title: '基本表格'
+  },
+  config: {
+    selection: true
+  },
   tableData: [{
     header: 'header',
     date: '2016-05-02',

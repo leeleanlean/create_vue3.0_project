@@ -1,6 +1,6 @@
 <template>
   <section class="meterial-table">
-    <BaseTable :config="_config">
+    <BaseTable :config="config">
       <!-- header -->
       <template v-slot:header>
         <el-table-column label="header" prop="header">
@@ -28,7 +28,7 @@
 </template>
 <script lang="ts">
 import BaseTable from '@/components/BaseTable/index.vue'
-import config from './config'
+import data from './config'
 import { onMounted, reactive } from 'vue'
 
 export default {
@@ -37,11 +37,11 @@ export default {
     BaseTable
   },
   setup () {
-    const _config = reactive(config)
+    const config = reactive(data)
 
     const init = () => {
       setTimeout(() => {
-        _config.tableData.push({
+        config.tableData.push({
           header: 'header',
           date: '2016-05-01',
           name: '王小虎',
@@ -49,7 +49,7 @@ export default {
           address: '上海市普陀区金沙江路 1519 弄',
           footer: 'footer'
         })
-        _config.pagination.pageTotal = 600
+        config.pagination.pageTotal = 600
       }, 1500)
     }
 
@@ -57,7 +57,7 @@ export default {
       init()
     })
     return {
-      _config
+      config
     }
   }
 }

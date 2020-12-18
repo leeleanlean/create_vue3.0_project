@@ -6,26 +6,18 @@ export default {
   path: '/Material',
   name: 'Material',
   component: _importLayout(),
-  redirect: '/Material/Form',
+  redirect: '/Material/Table',
   meta: {
     title: 'Material'
   },
   children: [
     {
-      path: 'Form',
-      name: 'MaterialForm',
-      meta: {
-        keepAlive: true,
-        title: 'Form'
-      },
-      component: _import('Material/Form')
-    },
-    {
       path: 'Table',
       name: 'MaterialTable',
       meta: {
         keepAlive: true,
-        title: 'Table'
+        title: '基本表格',
+        icon: 'el-icon-tickets'
       },
       component: _import('Material/Table')
     },
@@ -34,9 +26,20 @@ export default {
       name: 'MaterialTableSearch',
       meta: {
         keepAlive: true,
-        title: 'TableSearch'
+        title: '带搜索表格',
+        icon: 'el-icon-search'
       },
       component: _import('Material/TableSearch')
+    },
+    {
+      path: 'Form',
+      name: 'MaterialForm',
+      meta: {
+        keepAlive: true,
+        title: '通用表单',
+        icon: 'el-icon-postcard'
+      },
+      component: _import('Material/Form')
     }
   ]
 }

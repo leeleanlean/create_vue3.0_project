@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.e6e1c2297d6ac12066453bcf2b6af147.js"
+  "precache-manifest.566c0c45b5250b32702a79759d2cb837.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "create_vue3.0_project"});

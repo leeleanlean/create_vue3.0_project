@@ -1,4 +1,7 @@
 export default {
+  pages: {
+    title: '通用表单'
+  },
   // 配置整体表单
   form: {
     // 默认数据
