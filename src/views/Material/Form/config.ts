@@ -20,6 +20,11 @@ export default {
   row: {
     gutter: 20
   },
+  // 配置接口请求
+  httpRequest: {
+    url: '',
+    method: ''
+  },
 
   // 配置不同类型的表单
   cols: [
