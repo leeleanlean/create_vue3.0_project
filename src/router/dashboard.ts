@@ -11,19 +11,25 @@ export default {
   name: 'Dashboard',
   redirect: '/Dashboard/Index',
   component: _importLayout(),
-  meta: { title: 'Dashboard' },
+  meta: { title: '框架介绍' },
   children: [
     {
       path: 'Index',
       name: 'DashboardIndex',
       component: _import('Dashboard/Index'),
-      meta: { title: 'Dashboard' }
+      meta: {
+        title: '框架介绍',
+        icon: 'el-icon-menu'
+      }
     },
     {
-      path: 'About',
-      name: 'DashboardAbout',
-      component: _import('Dashboard/About'),
-      meta: { title: 'About' }
+      path: 'GitHub',
+      name: 'DashboardGitHub',
+      component: _import('Dashboard/GitHub'),
+      meta: {
+        title: 'GitHub',
+        icon: 'el-icon-service'
+      }
     }
   ]
 }

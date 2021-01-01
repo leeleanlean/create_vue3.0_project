@@ -1,6 +1,6 @@
 <template>
   <section class="dashboard">
-    dashboard
+    Vue.js3.x + Element Plus + TypeScript
   </section>
 </template>
 <script lang="ts">
